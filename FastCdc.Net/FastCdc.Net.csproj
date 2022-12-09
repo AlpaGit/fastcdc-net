@@ -11,6 +11,7 @@
         <Description>FastCdc implementation of fastcdc-rust</Description>
         <RepositoryUrl>https://github.com/AlpaGit/fastcdc-net</RepositoryUrl>
         <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
 
 </Project>

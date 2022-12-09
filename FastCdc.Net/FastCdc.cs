@@ -66,7 +66,7 @@ public sealed class FastCdc
         _maskL = Mask(bits - 1);
         _eof = eof;
     }
-
+    
     internal (uint, uint) Cut(uint sourceOffset, uint sourceSize)
     {
         if (sourceSize <= _minSize)
