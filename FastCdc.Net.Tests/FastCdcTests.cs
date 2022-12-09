@@ -10,12 +10,13 @@ public class FastCdcTests
     [Test]
     public void FastCdc_Logarithm2()
     {
-        Assert.AreEqual(16, FastCdc.Logarithm2(65537));
-        Assert.AreEqual(16, FastCdc.Logarithm2(65536));
-        Assert.AreEqual(16, FastCdc.Logarithm2(65535));
-        Assert.AreEqual(15, FastCdc.Logarithm2(32769));
-        Assert.AreEqual(15, FastCdc.Logarithm2(32768));
-        Assert.AreEqual(15, FastCdc.Logarithm2(32767));
+        Assert.That(FastCdc.Logarithm2(65537), Is.EqualTo(16));
+        Assert.That(FastCdc.Logarithm2(65536), Is.EqualTo(16));
+        Assert.That(FastCdc.Logarithm2(65535), Is.EqualTo(16));
+
+        Assert.That(FastCdc.Logarithm2(32769), Is.EqualTo(15));
+        Assert.That(FastCdc.Logarithm2(32768), Is.EqualTo(15));
+        Assert.That(FastCdc.Logarithm2(32767), Is.EqualTo(15));
         
         Assert.True(FastCdc.Logarithm2(FastCdc.AverageMin) >= 8);
         Assert.True(FastCdc.Logarithm2(FastCdc.AverageMax) <= 28);
@@ -25,20 +26,20 @@ public class FastCdcTests
     [Test]
     public void FastCdc_CeilDiv()
     {
-        Assert.AreEqual(2, FastCdc.CeilDiv(10, 5));
-        Assert.AreEqual(3, FastCdc.CeilDiv(11, 5));
-        Assert.AreEqual(4, FastCdc.CeilDiv(10, 3));
-        Assert.AreEqual(3, FastCdc.CeilDiv(9, 3));
-        Assert.AreEqual(3, FastCdc.CeilDiv(6, 2));
-        Assert.AreEqual(3, FastCdc.CeilDiv(5, 2));
+        Assert.That(FastCdc.CeilDiv(10, 5), Is.EqualTo(2));
+        Assert.That(FastCdc.CeilDiv(11, 5), Is.EqualTo(3));
+        Assert.That(FastCdc.CeilDiv(10, 3), Is.EqualTo(4));
+        Assert.That(FastCdc.CeilDiv(9, 3), Is.EqualTo(3));
+        Assert.That(FastCdc.CeilDiv(6, 2), Is.EqualTo(3));
+        Assert.That(FastCdc.CeilDiv(5, 2), Is.EqualTo(3));
     }
     
     [Test]
     public void FastCdc_CenterSize()
     {
-        Assert.AreEqual(0, FastCdc.CenterSize(50, 100, 50));
-        Assert.AreEqual(50, FastCdc.CenterSize(200, 100, 50));
-        Assert.AreEqual(40, FastCdc.CenterSize(200, 100, 40));
+        Assert.That(FastCdc.CenterSize(50, 100, 50), Is.EqualTo(0));
+        Assert.That(FastCdc.CenterSize(200, 100, 50), Is.EqualTo(50));
+        Assert.That(FastCdc.CenterSize(200, 100, 40), Is.EqualTo(40));
     }
     
     [Test]
@@ -56,10 +57,10 @@ public class FastCdcTests
     [Test]
     public void FastCdc_Mask()
     {
-        Assert.AreEqual(16_777_215, FastCdc.Mask(24));
-        Assert.AreEqual(65535, FastCdc.Mask(16));
-        Assert.AreEqual(1023, FastCdc.Mask(10)); 
-        Assert.AreEqual(255, FastCdc.Mask(8));
+        Assert.That(FastCdc.Mask(24), Is.EqualTo(16_777_215));
+        Assert.That(FastCdc.Mask(16), Is.EqualTo(65535));
+        Assert.That(FastCdc.Mask(10), Is.EqualTo(1023));
+        Assert.That(FastCdc.Mask(8), Is.EqualTo(255));
     }
     
     [Test]
@@ -129,12 +130,12 @@ public class FastCdcTests
         var fastCdc = new FastCdc(array, 64, 256, 1024);
         var results = fastCdc.GetChunks().ToList();
         
-        Assert.AreEqual(results.Count, 10);
+        Assert.That(10, Is.EqualTo(results.Count));
         foreach (var entry in results)
         {
-            Assert.AreEqual(3106636015, entry.Hash);
-            Assert.AreEqual(0, entry.Offset % 1024);
-            Assert.AreEqual(1024, entry.Length);
+            Assert.That(entry.Hash, Is.EqualTo(3106636015));
+            Assert.That(entry.Offset % 1024, Is.EqualTo(0));
+            Assert.That(entry.Length, Is.EqualTo(1024));
         }
     }
     
@@ -146,30 +147,31 @@ public class FastCdcTests
         var fastCdc = new FastCdc(array, 8192, 16384, 32768);
         var results = fastCdc.GetChunks().ToList();
         
-        Assert.AreEqual(6, results.Count);
-        Assert.AreEqual(0, results[0].Offset);
-        Assert.AreEqual(22366, results[0].Length);
-        Assert.AreEqual(1527472128, results[0].Hash);
+        Assert.That(results.Count, Is.EqualTo(6));
+        
+        Assert.That(results[0].Offset, Is.EqualTo(0));
+        Assert.That(results[0].Length, Is.EqualTo(22366));
+        Assert.That(results[0].Hash, Is.EqualTo(1527472128));
 
-        Assert.AreEqual(22366, results[1].Offset);
-        Assert.AreEqual(8282, results[1].Length);
-        Assert.AreEqual(1174757376, results[1].Hash);
+        Assert.That(results[1].Offset, Is.EqualTo(22366));
+        Assert.That(results[1].Length, Is.EqualTo(8282));
+        Assert.That(results[1].Hash, Is.EqualTo(1174757376));
 
-        Assert.AreEqual(30648, results[2].Offset);
-        Assert.AreEqual(16303, results[2].Length);
-        Assert.AreEqual(2687197184, results[2].Hash);
+        Assert.That(results[2].Offset, Is.EqualTo(30648));
+        Assert.That(results[2].Length, Is.EqualTo(16303));
+        Assert.That(results[2].Hash, Is.EqualTo(2687197184));
 
-        Assert.AreEqual(46951, results[3].Offset); 
-        Assert.AreEqual(18696, results[3].Length);
-        Assert.AreEqual(1210105856, results[3].Hash);
+        Assert.That(results[3].Offset, Is.EqualTo(46951));
+        Assert.That(results[3].Length, Is.EqualTo(18696));
+        Assert.That(results[3].Hash, Is.EqualTo(1210105856));
 
-        Assert.AreEqual(65647, results[4].Offset);
-        Assert.AreEqual(32768, results[4].Length);
-        Assert.AreEqual(2984739645, results[4].Hash);
+        Assert.That(results[4].Offset, Is.EqualTo(65647));
+        Assert.That(results[4].Length, Is.EqualTo(32768));
+        Assert.That(results[4].Hash, Is.EqualTo(2984739645));
 
-        Assert.AreEqual(98415, results[5].Offset);
-        Assert.AreEqual(11051, results[5].Length);
-        Assert.AreEqual(1121740051, results[5].Hash);
+        Assert.That(results[5].Offset, Is.EqualTo(98415));
+        Assert.That(results[5].Length, Is.EqualTo(11051));
+        Assert.That(results[5].Hash, Is.EqualTo(1121740051));
     }
     
     [Test]
@@ -202,11 +204,11 @@ public class FastCdcTests
             var fastCdc = new FastCdc(slice, 8192, 16384, 32768, eof);
             var results = fastCdc.GetChunks().ToList();
 
-            Assert.AreEqual(groupSize, results.Count); 
+            Assert.That(results.Count, Is.EqualTo(groupSize)); 
             for(var idx = 0; idx < groupSize; idx++)
             {
-                Assert.AreEqual(chunkOffsets[chunkIndex], results[idx].Offset + filePos);
-                Assert.AreEqual(chunkSizes[chunkIndex], results[idx].Length);
+                Assert.That(results[idx].Offset + filePos, Is.EqualTo(chunkOffsets[chunkIndex]));
+                Assert.That(results[idx].Length, Is.EqualTo(chunkSizes[chunkIndex]));
                 chunkIndex++;
             }
 
@@ -214,7 +216,7 @@ public class FastCdcTests
                 filePos += (int)result.Length;
         }
         
-        Assert.AreEqual(fileSize, filePos);
+        Assert.That(fileSize, Is.EqualTo(filePos));
     }
     
     [Test]
@@ -225,18 +227,18 @@ public class FastCdcTests
         var fastCdc = new FastCdc(array, 16384, 32768, 65536);
         var results = fastCdc.GetChunks().ToList();
         
-        Assert.AreEqual(3, results.Count);
-        Assert.AreEqual(0, results[0].Offset);
-        Assert.AreEqual(32857, results[0].Length);
-        Assert.AreEqual(2772598784, results[0].Hash);
+        Assert.That(results.Count, Is.EqualTo(3));
+        Assert.That(results[0].Offset, Is.EqualTo(0));
+        Assert.That(results[0].Length, Is.EqualTo(32857));
+        Assert.That(results[0].Hash, Is.EqualTo(2772598784));
 
-        Assert.AreEqual(32857, results[1].Offset);
-        Assert.AreEqual(16408, results[1].Length);
-        Assert.AreEqual(1651589120, results[1].Hash);
+        Assert.That(results[1].Offset, Is.EqualTo(32857));
+        Assert.That(results[1].Length, Is.EqualTo(16408));
+        Assert.That(results[1].Hash, Is.EqualTo(1651589120));
 
-        Assert.AreEqual(49265, results[2].Offset);
-        Assert.AreEqual(60201, results[2].Length);
-        Assert.AreEqual(1121740051, results[2].Hash);
+        Assert.That(results[2].Offset, Is.EqualTo(49265));
+        Assert.That(results[2].Length, Is.EqualTo(60201));
+        Assert.That(results[2].Hash, Is.EqualTo(1121740051));
     }
     
     [Test]
@@ -247,13 +249,14 @@ public class FastCdcTests
         var fastCdc = new FastCdc(array, 32768, 65536, 131_072);
         var results = fastCdc.GetChunks().ToList();
         
-        Assert.AreEqual(2, results.Count);
-        Assert.AreEqual(0, results[0].Offset);
-        Assert.AreEqual(32857, results[0].Length);
-        Assert.AreEqual(2772598784, results[0].Hash);
+        Assert.That(results.Count, Is.EqualTo(2));
+        Assert.That(results[0].Offset, Is.EqualTo(0));
+        Assert.That(results[0].Length, Is.EqualTo(32857));
+        Assert.That(results[0].Hash, Is.EqualTo(2772598784));
 
-        Assert.AreEqual(32857, results[1].Offset);
-        Assert.AreEqual(76609, results[1].Length);
-        Assert.AreEqual(1121740051, results[1].Hash);
+        Assert.That(results[1].Offset, Is.EqualTo(32857));
+        Assert.That(results[1].Length, Is.EqualTo(76609));
+        Assert.That(results[1].Hash, Is.EqualTo(1121740051));
+
     }
 }

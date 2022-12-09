@@ -6,6 +6,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>FastCdc.Net</AssemblyName>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>FastCdc</Title>
+        <Description>FastCdc implementation of fastcdc-rust</Description>
+        <RepositoryUrl>https://github.com/AlpaGit/fastcdc-net</RepositoryUrl>
+        <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
     </PropertyGroup>
 
 </Project>
