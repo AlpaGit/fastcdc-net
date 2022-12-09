@@ -1,6 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System.Runtime.CompilerServices;
 
-namespace fastcdc_net;
+[assembly: InternalsVisibleTo("FastCdc.Net.Tests")]
+namespace FastCdc.Net;
 
 /// <summary>
 /// Implements the FastCDC algorithm based on the Rust library fastcdc-rs.
@@ -66,7 +67,7 @@ public sealed class FastCdc
         _eof = eof;
     }
 
-    private (uint, uint) Cut(uint sourceOffset, uint sourceSize)
+    internal (uint, uint) Cut(uint sourceOffset, uint sourceSize)
     {
         if (sourceSize <= _minSize)
             return _eof == false ? (0, 0) : (0u, sourceSize);
@@ -126,7 +127,7 @@ public sealed class FastCdc
             yield return chunk;
     }
 
-    public static uint CenterSize(uint average, uint minimum, uint sourceSize)
+    internal static uint CenterSize(uint average, uint minimum, uint sourceSize)
     {
         var offset = minimum + CeilDiv(minimum, 2);
         if (offset > average)
@@ -136,13 +137,13 @@ public sealed class FastCdc
         return size > sourceSize ? sourceSize : size;
     }
 
-    public static uint Logarithm2(uint value) => 
+    internal static uint Logarithm2(uint value) => 
         (uint)Math.Round(Math.Log(value, 2));
 
-    public static uint CeilDiv(uint x, uint y) => 
+    internal static uint CeilDiv(uint x, uint y) => 
         (x + y - 1) / y;
 
-    public static uint Mask(uint bits){
+    internal static uint Mask(uint bits){
         if (bits is < 1 or > 31)
             throw new ArgumentOutOfRangeException(nameof(bits), bits, "Bits must be between 1 and 31.");
         

@@ -1,8 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fastcdc-net", "fastcdc-net\fastcdc-net.csproj", "{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastCdc.Net", "FastCdc.Net\FastCdc.Net.csproj", "{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fastcdc-tests", "fastcdc-tests\fastcdc-tests.csproj", "{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastCdc.Net.Tests", "FastCdc.Net.Tests\FastCdc.Net.Tests.csproj", "{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastCdc.Net.Benchmark", "FastCdc.Net.Benchmark\FastCdc.Net.Benchmark.csproj", "{5FF0EE62-2DBD-48EE-ADEF-E8AB411AB197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FF0EE62-2DBD-48EE-ADEF-E8AB411AB197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF0EE62-2DBD-48EE-ADEF-E8AB411AB197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF0EE62-2DBD-48EE-ADEF-E8AB411AB197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF0EE62-2DBD-48EE-ADEF-E8AB411AB197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

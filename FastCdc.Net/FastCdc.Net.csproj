@@ -2,9 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <RootNamespace>fastcdc_net</RootNamespace>
+        <RootNamespace>FastCdc.Net</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>FastCdc.Net</AssemblyName>
     </PropertyGroup>
 
 </Project>

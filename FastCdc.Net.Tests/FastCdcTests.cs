@@ -1,6 +1,4 @@
-using fastcdc_net;
-
-namespace fastcdc_tests;
+namespace FastCdc.Net.Tests;
 
 public class FastCdcTests
 {

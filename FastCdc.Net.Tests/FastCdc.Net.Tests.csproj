@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <RootNamespace>fastcdc_tests</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
@@ -18,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\fastcdc-net\fastcdc-net.csproj" />
+      <ProjectReference Include="..\FastCdc.Net\FastCdc.Net.csproj" />
     </ItemGroup>
 
     <ItemGroup>

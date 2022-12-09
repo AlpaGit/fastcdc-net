@@ -1,4 +1,4 @@
-namespace fastcdc_net;
+namespace FastCdc.Net;
 
 public class Chunk
 {

@@ -1,4 +1,4 @@
-﻿namespace fastcdc_net;
+﻿namespace FastCdc.Net;
 
 internal static class Table
 {
