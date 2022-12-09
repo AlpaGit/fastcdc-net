@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fastcdc-net", "fastcdc-net\fastcdc-net.csproj", "{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fastcdc-tests", "fastcdc-tests\fastcdc-tests.csproj", "{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6E2381-1C0C-4C47-9351-D7C0088B24FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C023F17-6AB7-4E30-80C3-86C8C7D730F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
