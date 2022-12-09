@@ -16,9 +16,7 @@ public class FastCdcBenchmark
     [Benchmark]
     public void Benchmark16K()
     {
-        var array = File.ReadAllBytes("./fixtures/SekienAkashita.jpg");
-        
-        var fastCdc = new FastCdc(array, 8192, 16384, 32768);
+        var fastCdc = new FastCdc(_data, 8192, 16384, 32768);
         _ = fastCdc.GetChunks().ToArray();
     }
         
@@ -26,18 +24,14 @@ public class FastCdcBenchmark
     [Benchmark]
     public void Benchmark32K()
     {
-        var array = File.ReadAllBytes("./fixtures/SekienAkashita.jpg");
-        
-        var fastCdc = new FastCdc(array, 16384, 32768, 65536);
+        var fastCdc = new FastCdc(_data, 16384, 32768, 65536);
         _ = fastCdc.GetChunks().ToArray();
     }
     
     [Benchmark]
     public void Benchmark64K()
     {
-        var array = File.ReadAllBytes("./fixtures/SekienAkashita.jpg");
-        
-        var fastCdc = new FastCdc(array, 32768, 65536, 131_072);
+        var fastCdc = new FastCdc(_data, 32768, 65536, 131_072);
         _ = fastCdc.GetChunks().ToArray();
     }
 }

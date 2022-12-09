@@ -72,8 +72,7 @@ public sealed class FastCdc
         if (sourceSize <= _minSize)
             return _eof == false ? (0, 0) : (0u, sourceSize);
         
-        if(sourceSize > _maxSize)
-            sourceSize = _maxSize;
+        sourceSize = Math.Min(sourceSize, _maxSize);
         
         var sourceStart = sourceOffset;
         var sourceLen1 = sourceOffset + CenterSize(_avgSize, _minSize, sourceSize);
